@@ -1,7 +1,6 @@
 package br.com.mobi.codeinterview.service;
 
 import br.com.mobi.codeinterview.adapter.PointOfInterestCsvAdapter;
-import br.com.mobi.codeinterview.database.entity.CarPosition;
 import br.com.mobi.codeinterview.database.entity.PointOfInterest;
 import br.com.mobi.codeinterview.database.repository.PointOfInterestRepository;
 import br.com.mobi.codeinterview.util.CsvUtils;
@@ -15,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import java.net.URI;
 import java.nio.file.Paths;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 

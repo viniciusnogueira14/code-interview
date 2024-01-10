@@ -16,7 +16,7 @@ The project was created using the following technologies and frameworks:
 
 ## Known Backlog
 ### General
-* Implement all the suite of Tests (Unit, Integrated, API);
+* Finish the suite of Tests (Integrated, API and more cases of Unit Tests);
 * Implement caching strategy for the most called results, to improve the performance;
 * Implement the CI/CD strategy (Docker, Kubernetes, Pipelines, etc.);
 * Create an integration with SonarQube and define a level for the Quality Gate;
