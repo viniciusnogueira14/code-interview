@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -43,12 +44,16 @@ public class TimeAtPointOfInterestService {
     private List<CarAtPointOfInterestResource> getTimesByPointOfInterest(
             PointOfInterestResource point, List<CarPositionResource> carPositions) {
 
-        carPositions.forEach(carPosition ->
-                carPosition.setDistance(
+        carPositions.stream()
+                .filter(carPosition ->
+                        Objects.nonNull(carPosition.getLatitude())
+                                && Objects.nonNull(carPosition.getLongitude()))
+                .forEach(carPosition -> carPosition.setDistance(
                         LocationUtils.getDistanceBetweenGeoCoordinates(point.getLatitude(), point.getLongitude(),
                                 carPosition.getLatitude(), carPosition.getLongitude())));
 
         Map<String, List<CarPositionResource>> result = carPositions.stream()
+                .filter(carPosition -> Objects.nonNull(carPosition.getDistance()))
                 .collect(groupingBy(CarPositionResource::getPlate, Collectors.toList()));
 
         return result.values().stream()
