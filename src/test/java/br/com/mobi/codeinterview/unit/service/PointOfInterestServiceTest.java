@@ -1,11 +1,9 @@
 package br.com.mobi.codeinterview.unit.service;
 
 import br.com.mobi.codeinterview.adapter.PointOfInterestCsvAdapter;
-import br.com.mobi.codeinterview.database.entity.CarPosition;
 import br.com.mobi.codeinterview.database.entity.PointOfInterest;
 import br.com.mobi.codeinterview.database.repository.PointOfInterestRepository;
 import br.com.mobi.codeinterview.service.PointOfInterestService;
-import br.com.mobi.codeinterview.web.resource.CarPositionResource;
 import br.com.mobi.codeinterview.web.resource.PointOfInterestResource;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,7 +16,6 @@ import org.slf4j.Logger;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
